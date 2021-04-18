@@ -1,31 +1,28 @@
-import React, { Component } from 'react'
-import { Menu, Sticky, Icon } from "semantic-ui-react"
-import PropTypes from 'prop-types'
+import React from "react";
+import { Menu, Sticky, Icon } from "semantic-ui-react";
+import PropTypes from "prop-types";
 
+const Navbar = ({ icon, title }) => {
+  return (
+    <Sticky>
+      <Menu color="orange" inverted>
+        <Menu.Item data-cy="navbar-name">
+          <Icon data-cy="nav-icon" name={icon} size="big" />
+          {title}
+        </Menu.Item>
+      </Menu>
+    </Sticky>
+  );
+};
 
-class Navbar extends Component {
-  static defaultProps = {
-    title: "Github Finder",
-    icon: "github"
-  };
+Navbar.defaultProps = {
+  title: "Github Finder",
+  icon: "github",
+};
 
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired
-  }
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+};
 
-  render() {
-    return (
-      <Sticky>
-        <Menu color="orange" inverted>
-          <Menu.Item data-cy="navbar-name">
-            <Icon data-cy="nav-icon" name={this.props.icon} size="big" />
-            {this.props.title}
-          </Menu.Item>
-        </Menu>
-      </Sticky>
-    )
-  }
-}
-
-export default Navbar
+export default Navbar;

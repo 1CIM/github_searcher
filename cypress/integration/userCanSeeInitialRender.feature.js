@@ -12,4 +12,22 @@ describe("User can see the initial render of the page", () => {
       cy.get("[data-cy=nav-icon]").should("exist")
     })
   })
+
+  it("displays a card with user info and a button", () => {
+    cy.get("[data-cy=user-card]")
+    .first()
+    .find("[data-cy=user-img]").should("exist")
+  })
+
+  it("displays a card with user info and a button", () => {
+    cy.get("[data-cy=user-card]")
+    .first()
+    .find("[data-cy=user-login]").should("contain", "mojombo")
+  })
+
+  it("displays a card with user info and a button", () => {
+    cy.get("[data-cy=user-card]")
+    .first()
+    .find("[data-cy=user-btn]").should("contain", "More")
+  })
 })
