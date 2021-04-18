@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import Navbar from "./components/layout/Navbar";
+import "semantic-ui-css/semantic.min.css";
 import "./App.css";
 
 class App extends Component {
   render() {
-    const name = "John Doe"
-
     return (
       <div className="App">
-        <h1>Yoo {name} </h1>
+        <Navbar />
       </div>
     );
   }
